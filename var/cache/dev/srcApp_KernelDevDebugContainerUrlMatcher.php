@@ -17,6 +17,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
         $this->staticRoutes = array(
             '/default' => array(array(array('_route' => 'default', '_controller' => 'App\\Controller\\DefaultController::index'), null, null, null, false, null)),
             '/pegar-sessao' => array(array(array('_route' => 'app_default_pegarsessao', '_controller' => 'App\\Controller\\DefaultController::pegarSessao'), null, null, null, false, null)),
+            '/escrever-mensagem' => array(array(array('_route' => 'app_default_escrevermensagem', '_controller' => 'App\\Controller\\DefaultController::escreverMensagem'), null, null, null, false, null)),
+            '/enviar-email' => array(array(array('_route' => 'app_default_email', '_controller' => 'App\\Controller\\DefaultController::email'), null, null, null, false, null)),
             '/session' => array(array(array('_route' => 'session', '_controller' => 'App\\Controller\\SessionController::index'), null, null, null, false, null)),
             '/_profiler' => array(array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null, true, null)),
             '/_profiler/search' => array(array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null, false, null)),

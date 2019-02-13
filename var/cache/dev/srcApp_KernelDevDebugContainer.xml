@@ -392,6 +392,8 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SessionController"/>
       </call>
     </service>
+    <service id="App\Service\Mensagem" class="App\Service\Mensagem" autowire="true" autoconfigure="true"/>
+    <service id="mensagem" class="App\Service\Mensagem" public="true" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -3560,14 +3562,14 @@
       <argument type="collection">
         <argument key="transport">smtp</argument>
         <argument key="url">%env(MAILER_URL)%</argument>
-        <argument key="username">null</argument>
-        <argument key="password">null</argument>
-        <argument key="host">localhost</argument>
-        <argument key="port">null</argument>
+        <argument key="username">envioson@gmail.com</argument>
+        <argument key="password">q!w@e#r$t%</argument>
+        <argument key="host">smtp.gmail.com</argument>
+        <argument key="port">465</argument>
         <argument key="timeout">30</argument>
         <argument key="source_ip">null</argument>
         <argument key="local_domain">null</argument>
-        <argument key="encryption">null</argument>
+        <argument key="encryption">ssl</argument>
         <argument key="auth_mode">null</argument>
         <argument key="command">/usr/sbin/sendmail -bs</argument>
       </argument>
@@ -4411,12 +4413,20 @@
         <argument key="session" type="service" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.W__Vded" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Z_.o95M" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="mailer" type="service" id="swiftmailer.mailer.default"/>
+      </argument>
+    </service>
+    <service id=".service_locator.2CS75Do" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\DefaultController::email" type="service" id=".service_locator.Z_.o95M"/>
         <argument key="App\Controller\DefaultController::index" type="service" id=".service_locator.3hxx.mU"/>
         <argument key="App\Controller\DefaultController::pegarSessao" type="service" id=".service_locator.3hxx.mU"/>
         <argument key="App\Controller\SessionController::index" type="service" id=".service_locator.3hxx.mU"/>
+        <argument key="App\Controller\DefaultController:email" type="service" id=".service_locator.Z_.o95M"/>
         <argument key="App\Controller\DefaultController:index" type="service" id=".service_locator.3hxx.mU"/>
         <argument key="App\Controller\DefaultController:pegarSessao" type="service" id=".service_locator.3hxx.mU"/>
         <argument key="App\Controller\SessionController:index" type="service" id=".service_locator.3hxx.mU"/>
@@ -4690,7 +4700,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.W__Vded"/>
+      <argument type="service" id=".service_locator.2CS75Do"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -5116,7 +5126,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.W__Vded"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.2CS75Do"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
