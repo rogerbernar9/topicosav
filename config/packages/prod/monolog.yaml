@@ -18,6 +18,24 @@ monolog:
         deprecation:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.deprecations.log"
+        mail:
+            type: fingers_crossed
+            action_level: error
+            handler: duplicado
+
+        duplicado:
+            type: deduplication
+            handler: swift
+
+        swift:
+            type: swift_mailer
+            from_email: 'error@gmail.com'
+            to_email: 'envioson@gmail.com'
+            subject: 'Ocorreu algum error :  %%messge%%'
+            level: debug
+            formatter: monolog.formatter.html
+            content_type: text/html
+
         deprecation_filter:
             type: filter
             handler: deprecation

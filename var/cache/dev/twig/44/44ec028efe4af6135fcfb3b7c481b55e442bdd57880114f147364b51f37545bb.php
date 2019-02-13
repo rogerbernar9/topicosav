@@ -121,6 +121,6 @@ class __TwigTemplate_8d6cdb9c03a8818dd4adcf991a0f5b0ca70157263ff44c5f6b3ef3feb1a
 .exception-message-wrapper .container {
     min-height: auto;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/var/www/projeto2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/var/www/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

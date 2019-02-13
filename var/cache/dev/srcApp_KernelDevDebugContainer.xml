@@ -81,13 +81,13 @@
     <parameter key="kernel.container_class">srcApp_KernelDevDebugContainer</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="env(DATABASE_URL)"></parameter>
-    <parameter key="locale">en</parameter>
+    <parameter key="locale">pt_BR</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">pt_BR</parameter>
     <parameter key="templating.helper.code.file_link_format">null</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -360,6 +360,7 @@
       </parameter>
     </parameter>
     <parameter key="console.command.ids" type="collection">
+      <parameter>console.command.public_alias.App\Command\HelloWorldCommand</parameter>
       <parameter>console.command.public_alias.doctrine_cache.contains_command</parameter>
       <parameter>console.command.public_alias.doctrine_cache.delete_command</parameter>
       <parameter>console.command.public_alias.doctrine_cache.flush_command</parameter>
@@ -377,6 +378,9 @@
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/var/www/var/log/dev.log</argument>
+    </service>
+    <service id="App\Command\HelloWorldCommand" class="App\Command\HelloWorldCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
     </service>
     <service id="App\Controller\DefaultController" class="App\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -413,7 +417,7 @@
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>pt_BR</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
     </service>
     <service id="http_exception_listener" class="Symfony\Component\HttpKernel\EventListener\ExceptionListener" public="false">
@@ -623,7 +627,7 @@
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>en</argument>
+      <argument>pt_BR</argument>
       <argument>/var/www/translations</argument>
       <argument>/var/www/templates</argument>
       <call method="setName">
@@ -1062,7 +1066,7 @@
     <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator" public="false">
       <argument type="service" id=".service_locator.yQVjGlt"/>
       <argument type="service" id="translator.formatter.default"/>
-      <argument>en</argument>
+      <argument>pt_BR</argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -1273,6 +1277,7 @@
             <argument>/var/www/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/var/www/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/var/www/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
+            <argument>/var/www/translations/messages.pt_BR.yaml</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>/var/www/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
@@ -1355,7 +1360,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>en</argument>
+          <argument>pt_BR</argument>
         </argument>
       </call>
     </service>
@@ -4239,6 +4244,8 @@
         <argument>server:log</argument>
       </call>
     </service>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.App\Command\HelloWorldCommand" class="App\Command\HelloWorldCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Command\HelloWorldCommand" class="App\Command\HelloWorldCommand" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4419,16 +4426,32 @@
         <argument key="mailer" type="service" id="swiftmailer.mailer.default"/>
       </argument>
     </service>
-    <service id=".service_locator.2CS75Do" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.1n6P8pO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="logger" type="service" id="monolog.logger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.BnMESFC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translator" type="service" id="translator.data_collector"/>
+      </argument>
+    </service>
+    <service id=".service_locator.73XVXlj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\DefaultController::email" type="service" id=".service_locator.Z_.o95M"/>
         <argument key="App\Controller\DefaultController::index" type="service" id=".service_locator.3hxx.mU"/>
+        <argument key="App\Controller\DefaultController::logger" type="service" id=".service_locator.1n6P8pO"/>
         <argument key="App\Controller\DefaultController::pegarSessao" type="service" id=".service_locator.3hxx.mU"/>
+        <argument key="App\Controller\DefaultController::translate" type="service" id=".service_locator.BnMESFC"/>
         <argument key="App\Controller\SessionController::index" type="service" id=".service_locator.3hxx.mU"/>
         <argument key="App\Controller\DefaultController:email" type="service" id=".service_locator.Z_.o95M"/>
         <argument key="App\Controller\DefaultController:index" type="service" id=".service_locator.3hxx.mU"/>
+        <argument key="App\Controller\DefaultController:logger" type="service" id=".service_locator.1n6P8pO"/>
         <argument key="App\Controller\DefaultController:pegarSessao" type="service" id=".service_locator.3hxx.mU"/>
+        <argument key="App\Controller\DefaultController:translate" type="service" id=".service_locator.BnMESFC"/>
         <argument key="App\Controller\SessionController:index" type="service" id=".service_locator.3hxx.mU"/>
       </argument>
     </service>
@@ -4700,7 +4723,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.2CS75Do"/>
+      <argument type="service" id=".service_locator.73XVXlj"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -5126,7 +5149,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.2CS75Do"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.73XVXlj"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
@@ -5142,6 +5165,7 @@
     <service id="argument_resolver.service" alias="debug.argument_resolver.service" public="false"/>
     <service id="argument_resolver.default" alias="debug.argument_resolver.default" public="false"/>
     <service id="argument_resolver.variadic" alias="debug.argument_resolver.variadic" public="false"/>
+    <service id="console.command.public_alias.App\Command\HelloWorldCommand" alias="App\Command\HelloWorldCommand" public="true"/>
     <service id="console.command.public_alias.doctrine_cache.contains_command" alias="doctrine_cache.contains_command" public="true"/>
     <service id="console.command.public_alias.doctrine_cache.delete_command" alias="doctrine_cache.delete_command" public="true"/>
     <service id="console.command.public_alias.doctrine_cache.flush_command" alias="doctrine_cache.flush_command" public="true"/>

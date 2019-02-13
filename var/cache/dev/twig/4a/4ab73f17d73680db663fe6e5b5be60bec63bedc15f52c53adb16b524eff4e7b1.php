@@ -51,6 +51,6 @@ class __TwigTemplate_2862162747b0f12bcf8bcfe02662b71ecdf68593cbb88c7a99f8f7a5ce8
     {
         return new Twig_Source("id=\"<?php echo \$view->escape(\$id) ?>\" name=\"<?php echo \$view->escape(\$full_name) ?>\"<?php if (\$disabled): ?> disabled=\"disabled\"<?php endif ?>
 <?php echo \$attr ? ' '.\$view['form']->block(\$form, 'attributes') : '' ?>
-", "@Framework/Form/button_attributes.html.php", "/var/www/projeto2/vendor/symfony/framework-bundle/Resources/views/Form/button_attributes.html.php");
+", "@Framework/Form/button_attributes.html.php", "/var/www/vendor/symfony/framework-bundle/Resources/views/Form/button_attributes.html.php");
     }
 }

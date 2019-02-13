@@ -49,6 +49,6 @@ class __TwigTemplate_a46d81a2b77c07ca43d099bf3da4a78d62f06f257c863c253ed2ba42be7
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'button_widget', array('type' => isset(\$type) ? \$type : 'submit')) ?>
-", "@Framework/Form/submit_widget.html.php", "/var/www/projeto2/vendor/symfony/framework-bundle/Resources/views/Form/submit_widget.html.php");
+", "@Framework/Form/submit_widget.html.php", "/var/www/vendor/symfony/framework-bundle/Resources/views/Form/submit_widget.html.php");
     }
 }

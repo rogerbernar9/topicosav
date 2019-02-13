@@ -61,6 +61,6 @@ class __TwigTemplate_9bb152f5d3ce907c818e46c5239501ef7332420ca7528b2d79ba3e3b756
     <?php echo \$view['form']->widget(\$form, \$widgetAttr); ?>
     <?php echo \$view['form']->help(\$form); ?>
 </div>
-", "@Framework/Form/form_row.html.php", "/var/www/projeto2/vendor/symfony/framework-bundle/Resources/views/Form/form_row.html.php");
+", "@Framework/Form/form_row.html.php", "/var/www/vendor/symfony/framework-bundle/Resources/views/Form/form_row.html.php");
     }
 }

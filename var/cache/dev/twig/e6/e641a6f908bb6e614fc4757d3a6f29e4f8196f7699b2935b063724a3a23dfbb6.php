@@ -77,6 +77,6 @@ class __TwigTemplate_c36e8ac041b0a0398eba3a209d31c7dce0429bfd3f0cbb5f59717e388d7
     c-0.6,0-1.2,0.5-1.2,1.2c0,0.6,0.5,1.2,1.1,1.2c0,0,0,0,0,0c-1.3,0-2.3-1.2-2.3-2.6c0-1.5,1-2.5,2.3-2.5c1.3,0,2.3,1.1,2.3,2.5
     C17.1,9.8,16.2,10.9,15,11z\"/>
 </svg>
-", "@WebProfiler/Icon/exception.svg", "/var/www/projeto2/vendor/symfony/web-profiler-bundle/Resources/views/Icon/exception.svg");
+", "@WebProfiler/Icon/exception.svg", "/var/www/vendor/symfony/web-profiler-bundle/Resources/views/Icon/exception.svg");
     }
 }

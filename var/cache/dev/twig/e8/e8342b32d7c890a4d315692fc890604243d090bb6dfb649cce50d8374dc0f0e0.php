@@ -456,6 +456,6 @@ class __TwigTemplate_813f0d932ccd16c88a5d4d582003d981637c1d18d88a2e53e923ba82691
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "/var/www/projeto2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "/var/www/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
     }
 }

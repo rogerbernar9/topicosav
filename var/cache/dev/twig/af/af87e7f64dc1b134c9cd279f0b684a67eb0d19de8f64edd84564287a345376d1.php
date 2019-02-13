@@ -59,6 +59,6 @@ class __TwigTemplate_4e11283c1a5615506b830727e0f4384a5309fdda91ff0bb5c1467cda00e
         <?php echo \$view['form']->widget(\$form); ?>
     </td>
 </tr>
-", "@Framework/FormTable/button_row.html.php", "/var/www/projeto2/vendor/symfony/framework-bundle/Resources/views/FormTable/button_row.html.php");
+", "@Framework/FormTable/button_row.html.php", "/var/www/vendor/symfony/framework-bundle/Resources/views/FormTable/button_row.html.php");
     }
 }

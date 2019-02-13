@@ -1433,6 +1433,61 @@
         ]
     },
     {
+        "name": "imponeer/composer-yarn-installer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/imponeer/composer-yarn-installer.git",
+            "reference": "ca5148104b2aa4f4cc140d4bd0fc2d9fd468e859"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/imponeer/composer-yarn-installer/zipball/ca5148104b2aa4f4cc140d4bd0fc2d9fd468e859",
+            "reference": "ca5148104b2aa4f4cc140d4bd0fc2d9fd468e859",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.1",
+            "matthiasmullie/path-converter": "^1.1",
+            "mouf/nodejs-installer": "~1.0",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "composer/composer": "*",
+            "ext-json": "*",
+            "php": ">=7.1",
+            "phpunit/phpunit": "^7.0",
+            "symfony/console": "*",
+            "symfony/filesystem": "*",
+            "symfony/process": "*"
+        },
+        "time": "2018-03-29T12:42:35+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": [
+                "Imponeer\\ComposerYarnInstaller\\Plugin"
+            ]
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Imponeer\\ComposerYarnInstaller\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Raimondas Rimkevičius",
+                "email": "github@mekdrop.name"
+            }
+        ],
+        "description": "Composer plugin to install yarn in vendor/"
+    },
+    {
         "name": "jdorn/sql-formatter",
         "version": "v1.2.17",
         "version_normalized": "1.2.17.0",
@@ -1482,6 +1537,57 @@
         "keywords": [
             "highlight",
             "sql"
+        ]
+    },
+    {
+        "name": "matthiasmullie/path-converter",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/matthiasmullie/path-converter.git",
+            "reference": "5e4b121c8b9f97c80835c1d878b0812ba1d607c9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/5e4b121c8b9f97c80835c1d878b0812ba1d607c9",
+            "reference": "5e4b121c8b9f97c80835c1d878b0812ba1d607c9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pcre": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2018-10-25T15:19:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MatthiasMullie\\PathConverter\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Matthias Mullie",
+                "email": "pathconverter@mullie.eu",
+                "homepage": "http://www.mullie.eu",
+                "role": "Developer"
+            }
+        ],
+        "description": "Relative path converter",
+        "homepage": "http://github.com/matthiasmullie/path-converter",
+        "keywords": [
+            "converter",
+            "path",
+            "paths",
+            "relative"
         ]
     },
     {
@@ -1562,6 +1668,64 @@
             "log",
             "logging",
             "psr-3"
+        ]
+    },
+    {
+        "name": "mouf/nodejs-installer",
+        "version": "v1.0.13",
+        "version_normalized": "1.0.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thecodingmachine/nodejs-installer.git",
+            "reference": "e9bc2e7c75665913dd73dc4765b40757e6796ee8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/e9bc2e7c75665913dd73dc4765b40757e6796ee8",
+            "reference": "e9bc2e7c75665913dd73dc4765b40757e6796ee8",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0.0",
+            "ext-openssl": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "composer/composer": "*"
+        },
+        "time": "2018-04-16T16:03:09+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": [
+                "Mouf\\NodeJsInstaller\\NodeJsPlugin"
+            ],
+            "mouf": {
+                "logo": "node-js.png"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Mouf\\NodeJsInstaller\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Négrier",
+                "email": "d.negrier@thecodingmachine.com",
+                "homepage": "http://mouf-php.com"
+            }
+        ],
+        "description": "An installer package that let's you install NodeJS and NPM as a Composer dependency.",
+        "homepage": "http://mouf-php.com/packages/mouf/nodejs-installer",
+        "keywords": [
+            "installer",
+            "nodejs",
+            "npm"
         ]
     },
     {
@@ -2282,17 +2446,17 @@
     },
     {
         "name": "symfony/asset",
-        "version": "v4.2.1",
-        "version_normalized": "4.2.1.0",
+        "version": "v4.2.3",
+        "version_normalized": "4.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/asset.git",
-            "reference": "fb06338fd3762f8615b51a58e5e9299ccca03876"
+            "reference": "7eee96a8630f9448304ae4f0e3b474ea4e033664"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/asset/zipball/fb06338fd3762f8615b51a58e5e9299ccca03876",
-            "reference": "fb06338fd3762f8615b51a58e5e9299ccca03876",
+            "url": "https://api.github.com/repos/symfony/asset/zipball/7eee96a8630f9448304ae4f0e3b474ea4e033664",
+            "reference": "7eee96a8630f9448304ae4f0e3b474ea4e033664",
             "shasum": ""
         },
         "require": {
@@ -2305,7 +2469,7 @@
         "suggest": {
             "symfony/http-foundation": ""
         },
-        "time": "2018-11-11T19:52:12+00:00",
+        "time": "2019-01-16T20:35:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3299,24 +3463,24 @@
     },
     {
         "name": "symfony/filesystem",
-        "version": "v4.2.1",
-        "version_normalized": "4.2.1.0",
+        "version": "v4.2.3",
+        "version_normalized": "4.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/filesystem.git",
-            "reference": "2f4c8b999b3b7cadb2a69390b01af70886753710"
+            "reference": "7c16ebc2629827d4ec915a52ac809768d060a4ee"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/filesystem/zipball/2f4c8b999b3b7cadb2a69390b01af70886753710",
-            "reference": "2f4c8b999b3b7cadb2a69390b01af70886753710",
+            "url": "https://api.github.com/repos/symfony/filesystem/zipball/7c16ebc2629827d4ec915a52ac809768d060a4ee",
+            "reference": "7c16ebc2629827d4ec915a52ac809768d060a4ee",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3",
             "symfony/polyfill-ctype": "~1.8"
         },
-        "time": "2018-11-11T19:52:12+00:00",
+        "time": "2019-01-16T20:35:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3351,23 +3515,23 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v4.2.1",
-        "version_normalized": "4.2.1.0",
+        "version": "v4.2.3",
+        "version_normalized": "4.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "e53d477d7b5c4982d0e1bfd2298dbee63d01441d"
+            "reference": "ef71816cbb264988bb57fe6a73f610888b9aa70c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/e53d477d7b5c4982d0e1bfd2298dbee63d01441d",
-            "reference": "e53d477d7b5c4982d0e1bfd2298dbee63d01441d",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/ef71816cbb264988bb57fe6a73f610888b9aa70c",
+            "reference": "ef71816cbb264988bb57fe6a73f610888b9aa70c",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2018-11-11T19:52:12+00:00",
+        "time": "2019-01-16T20:35:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4200,26 +4364,26 @@
     },
     {
         "name": "symfony/orm-pack",
-        "version": "v1.0.5",
-        "version_normalized": "1.0.5.0",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/orm-pack.git",
-            "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1"
+            "reference": "36c2a928482dc5f05c5c1c1b947242ae03ff1335"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/orm-pack/zipball/1b58f752cd917a08c9c8df020781d9c46a2275b1",
-            "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1",
+            "url": "https://api.github.com/repos/symfony/orm-pack/zipball/36c2a928482dc5f05c5c1c1b947242ae03ff1335",
+            "reference": "36c2a928482dc5f05c5c1c1b947242ae03ff1335",
             "shasum": ""
         },
         "require": {
             "doctrine/doctrine-bundle": "^1.6.10",
-            "doctrine/doctrine-migrations-bundle": "^1.3",
+            "doctrine/doctrine-migrations-bundle": "^1.3|^2.0",
             "doctrine/orm": "^2.5.11",
             "php": "^7.0"
         },
-        "time": "2017-12-12T01:47:50+00:00",
+        "time": "2019-01-16T09:49:15+00:00",
         "type": "symfony-pack",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -5457,17 +5621,17 @@
     },
     {
         "name": "symfony/translation",
-        "version": "v4.2.1",
-        "version_normalized": "4.2.1.0",
+        "version": "v4.2.3",
+        "version_normalized": "4.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation.git",
-            "reference": "c0e2191e9bed845946ab3d99767513b56ca7dcd6"
+            "reference": "23fd7aac70d99a17a8e6473a41fec8fab3331050"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation/zipball/c0e2191e9bed845946ab3d99767513b56ca7dcd6",
-            "reference": "c0e2191e9bed845946ab3d99767513b56ca7dcd6",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/23fd7aac70d99a17a8e6473a41fec8fab3331050",
+            "reference": "23fd7aac70d99a17a8e6473a41fec8fab3331050",
             "shasum": ""
         },
         "require": {
@@ -5497,7 +5661,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2018-12-06T10:45:32+00:00",
+        "time": "2019-01-27T23:11:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

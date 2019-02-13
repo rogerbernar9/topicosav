@@ -145,6 +145,6 @@ class __TwigTemplate_c8120c10c555596db628403d6f533ef9f4a52c978204ffdf7aaf9ecaeee
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url, name: 'time', status: status_color }) }}
 {% endblock %}
-", "@WebProfiler/Collector/memory.html.twig", "/var/www/projeto2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/memory.html.twig");
+", "@WebProfiler/Collector/memory.html.twig", "/var/www/vendor/symfony/web-profiler-bundle/Resources/views/Collector/memory.html.twig");
     }
 }

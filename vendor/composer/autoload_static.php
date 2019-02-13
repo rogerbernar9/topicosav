@@ -103,7 +103,13 @@ class ComposerStaticInit46eadcdc7e3b380c70abdf2ded9b7f4a
         ),
         'M' => 
         array (
+            'Mouf\\NodeJsInstaller\\' => 21,
             'Monolog\\' => 8,
+            'MatthiasMullie\\PathConverter\\' => 29,
+        ),
+        'I' => 
+        array (
+            'Imponeer\\ComposerYarnInstaller\\' => 31,
         ),
         'F' => 
         array (
@@ -408,9 +414,21 @@ class ComposerStaticInit46eadcdc7e3b380c70abdf2ded9b7f4a
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
+        'Mouf\\NodeJsInstaller\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mouf/nodejs-installer/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'MatthiasMullie\\PathConverter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/matthiasmullie/path-converter/src',
+        ),
+        'Imponeer\\ComposerYarnInstaller\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/imponeer/composer-yarn-installer/src',
         ),
         'Fig\\Link\\' => 
         array (

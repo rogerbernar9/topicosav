@@ -313,6 +313,6 @@ class __TwigTemplate_73888bede0b422b0e5587c9d760ec82b91f60d2ca9e2650b962f39c1f25
     {% endif %}
 
 {% endblock %}
-", "@WebProfiler/Profiler/results.html.twig", "/var/www/projeto2/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
+", "@WebProfiler/Profiler/results.html.twig", "/var/www/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
     }
 }

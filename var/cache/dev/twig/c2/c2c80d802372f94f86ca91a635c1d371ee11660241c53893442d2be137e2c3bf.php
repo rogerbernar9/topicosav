@@ -1645,6 +1645,6 @@ class __TwigTemplate_5f682db50eb44cd0bf0ca48b96748869cb9d13551ef98acdf9cb1d0d114
         <canvas width=\"680\" height=\"\" id=\"{{ id }}\" class=\"timeline\"></canvas>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/var/www/projeto2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/var/www/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }
