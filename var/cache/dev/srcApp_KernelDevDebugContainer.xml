@@ -22,6 +22,7 @@
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
+      <parameter key="CmsBundle">App\CmsBundle\CmsBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +76,10 @@
       <parameter key="WebServerBundle" type="collection">
         <parameter key="path">/var/www/vendor/symfony/web-server-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
+      </parameter>
+      <parameter key="CmsBundle" type="collection">
+        <parameter key="path">/var/www/src/CmsBundle</parameter>
+        <parameter key="namespace">App\CmsBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -378,6 +383,10 @@
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/var/www/var/log/dev.log</argument>
+    </service>
+    <service id="App\CmsBundle\CmsBundle" class="App\CmsBundle\CmsBundle" autowire="true" autoconfigure="true"/>
+    <service id="App\CmsBundle\Controller\PaginasController" class="App\CmsBundle\Controller\PaginasController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
     </service>
     <service id="App\Command\HelloWorldCommand" class="App\Command\HelloWorldCommand" autowire="true" autoconfigure="true">
       <tag name="console.command"/>
@@ -1939,6 +1948,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -4244,6 +4261,8 @@
         <argument>server:log</argument>
       </call>
     </service>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\CmsBundle\Controller\PaginasController" class="App\CmsBundle\Controller\PaginasController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\CmsBundle\Controller\PaginasController" class="App\CmsBundle\Controller\PaginasController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Console\Command\Command.0.App\Command\HelloWorldCommand" class="App\Command\HelloWorldCommand" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Command\HelloWorldCommand" class="App\Command\HelloWorldCommand" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>

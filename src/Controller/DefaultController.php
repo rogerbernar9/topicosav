@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Mensagem;
+use Symfony\Component\VarDumper\VarDumper;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class DefaultController extends AbstractController
@@ -20,6 +21,13 @@ class DefaultController extends AbstractController
      */
     public function index(SessionInterface $session)
     {
+        $user = new \stdClass();
+        $user->nome="Gilson";
+        $user->idade=19;
+        dump($user)->nome;
+
+        //VarDumper::dump(['name'=>"gilson"]);
+
         $frase = $session->get('frase', "Minha boa frase");
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',

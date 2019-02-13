@@ -28,6 +28,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/search_bar' => array(array(array('_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'), null, null, null, false, null)),
             '/_profiler/phpinfo' => array(array(array('_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'), null, null, null, false, null)),
             '/_profiler/open' => array(array(array('_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'), null, null, null, false, null)),
+            '/cms/listar' => array(array(array('_route' => 'app_cms_paginas_index', '_controller' => 'App\\CmsBundle\\Controller\\PaginasController::index'), null, null, null, false, null)),
         );
         $this->regexpList = array(
             0 => '{^(?'
